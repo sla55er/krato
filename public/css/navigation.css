@@ -1,0 +1,139 @@
+/* Clearfix */
+.clearfix:before,
+.clearfix:after {
+    content: " ";
+    display: table;
+}
+.clearfix:after {
+    clear: both;
+}
+.clearfix {
+    *zoom: 1;
+}
+
+.nav {
+    width: 100%;
+    background: #141414;
+    font-size: 11pt;
+    font-family: verdana;
+    font-weight: bold;
+    position: relative;
+}
+.nav ul {
+    padding: 0;
+    margin: 0 auto;
+    width: 630px;
+}
+.nav li {
+    display: inline;
+    float: left;
+}
+.nav a {
+    color: #00AF4D;
+    display: block;
+    font-family: verdana;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: normal;
+    height: 60px;
+    line-height: 57px;
+    padding: 0 20px;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+.nav li a {
+    box-sizing:border-box;
+    -moz-box-sizing:border-box;
+    -webkit-box-sizing:border-box;
+}
+.nav li:last-child a {
+    border-right: 0;
+}
+
+.nav a#pull {
+    display: none;
+    padding:0;
+}
+
+.span-navigation {
+    color: #fff;
+    font-family: verdana;
+    border-top: 3px solid #141414;
+    display:block;
+}
+
+.li-navigation:hover {
+    background-color: #fff;
+}
+
+.nav li:hover .span-navigation {
+    color: #00AF4D;
+    font-family: verdana;
+    border-top: 3px solid #00AF4D;
+    display:block;
+}
+
+/*Styles for screen 600px and lower*/
+@media screen and (max-width: 620px) {
+    .nav {
+        height: auto;
+    }
+    .nav ul {
+        width: 100%;
+        display: block;
+        height: auto;
+    }
+    .nav li {
+        width: 50%;
+        float: left;
+        position: relative;
+    }
+    .nav li a {
+        border-top: 1px solid #576979;
+        border-right: 1px solid #576979;
+    }
+    .nav a {
+        text-align: left;
+        width: 100%;
+        text-indent: 25px;
+    }
+}
+
+/*Styles for screen 515px and lower*/
+@media only screen and (max-width : 480px) {
+    .nav {
+        border-top: 0;
+    }
+    .nav ul {
+        display: none;
+        height: auto;
+    }
+    .nav a#pull {
+        display: block;
+        width: 100%;
+        position: relative;
+    }
+    .nav a#pull:after {
+        content:" ";
+        background: url('../images/nav-icon.png') no-repeat;
+        width: 30px;
+        height: 30px;
+        display: inline-block;
+        position: absolute;
+        margin-right:10px;
+        right: 10px;
+        top: 10px;
+    }
+}
+
+/*Smartphone*/
+@media only screen and (max-width : 320px) {
+    .nav li {
+        display: block;
+        float: none;
+        width: 100%;
+    }
+    .nav li a {
+        border-top: 1px solid #576979;
+    }
+}

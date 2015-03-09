@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <title>KratoBuilding</title>
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/navigation.css">
+    <link rel="stylesheet" href="css/jquery-ui.min.css">
+    <link rel="stylesheet" href="css/sly/horizontal.css">
+</head>
+<body>
+<div class="clearfix nav">
+    <ul class="clearfix">
+        <li class="li-navigation">
+            <a href="#">
+                <span class="span-navigation">home</span>
+            </a>
+            <div class="div-navigation">
+
+            </div>
+        </li>
+        <li class="li-navigation">
+            <a href="#">
+                <span class="span-navigation">buildings</span>
+            </a>
+            <div class="div-navigation">
+            </div>
+        </li>
+        <li class="li-navigation">
+            <a href="#">
+                <span class="span-navigation">services</span>
+            </a>
+            <div class="div-navigation">
+            </div>
+        </li>
+        <li class="li-navigation">
+            <a href="#">
+                <span class="span-navigation">engineering</span>
+            </a>
+            <div class="div-navigation">
+            </div>
+        </li>
+        <li class="li-navigation">
+            <a href="#">
+                <span class="span-navigation">contact us</span>
+            </a>
+            <div class="div-navigation">
+            </div>
+        </li>
+    </ul>
+    <a href="#" id="pull">Menu</a>
+</div>
+<div class="wrap">
+    <div class="scrollbar">
+        <div class="handle">
+            <div class="mousearea"></div>
+        </div>
+    </div>
+    <div class="frame effects" id="effects">
+        <ul id="buildings" class="clearfix">
+        </ul>
+    </div>
+</div>
+<!--<div id="books">
+    <form id="addBuilding" action="#">
+        <div>
+            <label for="coverImage">CoverImage: </label>
+            <input id="coverImage" type="file" />
+            <label for="title">Title: </label><input id="title" type="text" />
+            <label for="author">Author: </label><input id="author" type="text" />
+            <label for="releaseDate">Release date: </label>
+            <input id="releaseDate" type="text" />
+            <label for="keywords">Keywords: </label>
+            <input id="keywords" type="text" />
+            <button id="add">Add</button>
+        </div>
+    </form>
+</div>-->
+
+<script>
+//    $(function() {
+//        var pull 		= $('#pull');
+//        menu 		= $('.nav ul');
+//        menuHeight	= menu.height();
+//
+//        $(pull).on('click', function(e) {
+//            e.preventDefault();
+//            menu.slideToggle();
+//        });
+//
+//        $(window).resize(function(){
+//            var w = $(window).width();
+//            if(w > 320 && menu.is(':hidden')) {
+//                menu.removeAttr('style');
+//            }
+//        });
+//    });
+</script>
+<script data-main="js/main.js" src="js/vendors/require/require.min.js"></script>
+</body>
+</html>
