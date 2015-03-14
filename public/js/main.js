@@ -25,10 +25,12 @@ require.config({
 });
 
 require([
+    'views/MainMenuView',
     'models/BuildingModel',
     'views/BuildingsListView'
 ],
-function(BuildingModel, BuildingsListView)
+function(MainMenuView, BuildingModel, BuildingsListView)
 {
+    new MainMenuView();
     window.exposed = new BuildingsListView();
 });

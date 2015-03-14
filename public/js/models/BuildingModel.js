@@ -16,11 +16,12 @@ function(Backbone)
                 "images/fourth.jpg"
             ],
             apartments: []
+        },
+
+        parse: function( res ) {
+            res.id = res._id;
+            return res;
         }
-        //parse: function( response ) {
-        //    response.id = response._id;
-        //    return response;
-        //}
     });
 
     return BuildingModel;

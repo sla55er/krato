@@ -122,3 +122,14 @@ body { background: #e8e8e8; }
     -ms-transform: rotateY(-60deg) scale(0.75);
     transform: rotateY(-60deg) scale(0.75);
 }
+
+.delete-building {
+    position: absolute;
+    top:5px;
+    right:5px;
+    width:70px;
+    height:25px;
+    line-height: 13px;
+    font-size: 13px;
+    text-transform: uppercase;
+}

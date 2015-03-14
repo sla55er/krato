@@ -1,7 +1,7 @@
 define([
     'underscore',
     'backbone',
-    'text!templates/building.html'
+    'text!templates/BuildingView.html'
 ],
 function(_, Backbone, buildingTemplate)
 {
@@ -14,11 +14,11 @@ function(_, Backbone, buildingTemplate)
 
         events: {
             'click': 'onBuildingClick',
-            'click .delete': 'deleteBook'
+            'click .delete-building': 'deleteBook'
         },
 
         render: function() {
-            //better approach for the next line
+            //find better approach for the next line
             this.$el.css({"background-image": "url(" + this.model.get('defaultImage') + ")"});
             this.$el.html( this.template( this.model.toJSON() ));
             return this;
@@ -32,11 +32,9 @@ function(_, Backbone, buildingTemplate)
             }
         },
 
-        deleteBook: function() {
-            // Delete model
+        deleteBook: function(e) {
+            e.stopPropagation();
             this.model.destroy();
-            // Delete view
-            this.remove();
         }
     });
 

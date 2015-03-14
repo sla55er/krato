@@ -29,6 +29,7 @@ function($, Sly, Backbone, BuildingModel, Buildings, BuildingView)
             this.collection.fetch({reset: true});
             this.listenTo( this.collection, 'add', this.renderBuilding );
             this.listenTo( this.collection, 'reset', this.render );
+            this.listenTo( this.collection, 'remove', this.removeBuilding );
         },
 
         // render library by rendering each book in its collection
@@ -95,31 +96,33 @@ function($, Sly, Backbone, BuildingModel, Buildings, BuildingView)
 
             this.sly.add( buildingView.render().el );
             //this.$el.append( buildingView.render().el );
-        }
+        },
 
-     /*   addBuilding: function( e ) {
-            e.preventDefault();
-            var formData = {};
-            $( '#addBuilding div' ).children( 'input' ).each( function( i, el ) {
-                if( $( el ).val() != '' )
+        addBuilding: function( e ) {
+            //e.preventDefault();
+            var formData = {
+                name: "Krali Marko",
+                address: "ul.'Hristo Danov' 18",
+                status: "Finished",
+                description: "nice building"
+            };
+
+            this.collection.create( formData );
+        },
+
+        removeBuilding: function(model)
+        {
+            for (var i = 0; i < this.subViews.length; i++)
+            {
+                var currentView = this.subViews[i];
+                if (currentView.model.id == model.id)
                 {
-                    if( el.id === 'keywords' ) {
-                        formData[ el.id ] = [];
-                        _.each( $( el ).val().split( ' ' ), function( keyword ) {
-                            formData[ el.id ].push({ 'keyword': keyword });
-                        });
-                    } else if( el.id === 'releaseDate' ) {
-                        formData[ el.id ] = $( '#releaseDate' ).datepicker( 'getDate' ).getTime();
-                    } else {
-                        formData[ el.id ] = $( el ).val();
-                    }
+                    this.sly.remove(currentView.$el);
+                    this.subViews.splice(i, 1);
+                    break;
                 }
-                // Clear input field value
-                $( el ).val('');
-            });
-            this.collection.add( new Building( formData ) );
-            //this.collection.create( formData );
-        }*/
+            }
+        }
     });
 
     return BuildingsListView;

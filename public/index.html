@@ -9,46 +9,7 @@
     <link rel="stylesheet" href="css/sly/horizontal.css">
 </head>
 <body>
-<div class="clearfix nav">
-    <ul class="clearfix">
-        <li class="li-navigation">
-            <a href="#">
-                <span class="span-navigation">home</span>
-            </a>
-            <div class="div-navigation">
-
-            </div>
-        </li>
-        <li class="li-navigation">
-            <a href="#">
-                <span class="span-navigation">buildings</span>
-            </a>
-            <div class="div-navigation">
-            </div>
-        </li>
-        <li class="li-navigation">
-            <a href="#">
-                <span class="span-navigation">services</span>
-            </a>
-            <div class="div-navigation">
-            </div>
-        </li>
-        <li class="li-navigation">
-            <a href="#">
-                <span class="span-navigation">engineering</span>
-            </a>
-            <div class="div-navigation">
-            </div>
-        </li>
-        <li class="li-navigation">
-            <a href="#">
-                <span class="span-navigation">contact us</span>
-            </a>
-            <div class="div-navigation">
-            </div>
-        </li>
-    </ul>
-    <a href="#" id="pull">Menu</a>
+<div id="main-menu" class="clearfix nav">
 </div>
 <div class="wrap">
     <div class="scrollbar">
@@ -56,6 +17,7 @@
             <div class="mousearea"></div>
         </div>
     </div>
+    <button type="button" class="add-building">Add Building</button>
     <div class="frame effects" id="effects">
         <ul id="buildings" class="clearfix">
         </ul>
@@ -76,26 +38,6 @@
         </div>
     </form>
 </div>-->
-
-<script>
-//    $(function() {
-//        var pull 		= $('#pull');
-//        menu 		= $('.nav ul');
-//        menuHeight	= menu.height();
-//
-//        $(pull).on('click', function(e) {
-//            e.preventDefault();
-//            menu.slideToggle();
-//        });
-//
-//        $(window).resize(function(){
-//            var w = $(window).width();
-//            if(w > 320 && menu.is(':hidden')) {
-//                menu.removeAttr('style');
-//            }
-//        });
-//    });
-</script>
 <script data-main="js/main.js" src="js/vendors/require/require.min.js"></script>
 </body>
 </html>
