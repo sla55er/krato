@@ -6,7 +6,8 @@ require.config({
         "jquery": "vendors/jquery/jquery-1.11.2",
         "underscore": "vendors/underscore/underscore",
         "backbone": "vendors/backbone/backbone",
-        "Sly": "vendors/sly/sly.min"
+        "Sly": "vendors/sly/sly.min",
+        "swal": "vendors/sweet-alert/sweet-alert.min"
     },
 
     shim: {
@@ -20,6 +21,9 @@ require.config({
         "Sly": {
             deps: ["jquery"],
             exports: "Sly"
+        },
+        "swal": {
+            exports: "swal"
         }
     }
 });
@@ -29,7 +33,7 @@ require([
     'models/BuildingModel',
     'views/BuildingsListView'
 ],
-function(MainMenuView, BuildingModel, BuildingsListView)
+function(MainMenuView, BuildingModel, BuildingsListView, PopupHelper)
 {
     new MainMenuView();
     window.exposed = new BuildingsListView();

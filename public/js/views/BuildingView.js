@@ -1,9 +1,10 @@
 define([
     'underscore',
     'backbone',
-    'text!templates/BuildingView.html'
+    'text!templates/BuildingView.html',
+    'views/PopupHelper'
 ],
-function(_, Backbone, buildingTemplate)
+function(_, Backbone, buildingTemplate, PopupHelper)
 {
     var BuildingView = Backbone.View.extend({
         tagName: 'li',
@@ -34,7 +35,13 @@ function(_, Backbone, buildingTemplate)
 
         deleteBook: function(e) {
             e.stopPropagation();
-            this.model.destroy();
+
+            var self = this;
+
+            PopupHelper.confirmation(function()
+            {
+                self.model.destroy();
+            });
         }
     });
 
