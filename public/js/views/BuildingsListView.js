@@ -1,21 +1,23 @@
 define([
+    'underscore',
     'jquery',
     'Sly',
     'backbone',
     'models/BuildingModel',
     'collections/Buildings',
-    'views/BuildingView'
+    'views/BuildingView',
+    'text!templates/BuildingsListView.html'
 ],
-function($, Sly, Backbone, BuildingModel, Buildings, BuildingView)
+function(_, $, Sly, Backbone, BuildingModel, BuildingsCollection, BuildingView, template)
 {
     var BuildingsListView = Backbone.View.extend({
 
         subViews: [],
 
-        el: '#buildings',
+        el: '#buildings-wrap',
 
         events:{
-            'click #add':'addBuilding'
+            'click .add-building': 'addBuilding',
         },
 
         activeView: void 0,
@@ -23,9 +25,10 @@ function($, Sly, Backbone, BuildingModel, Buildings, BuildingView)
         initialize: function( )
         {
             //move this somewhere else
+            this.$el.append(_.template(template));
             this.initializeSly();
 
-            this.collection = new Buildings( );
+            this.collection = new BuildingsCollection();
             this.collection.fetch({reset: true});
             this.listenTo( this.collection, 'add', this.renderBuilding );
             this.listenTo( this.collection, 'reset', this.render );
@@ -95,7 +98,6 @@ function($, Sly, Backbone, BuildingModel, Buildings, BuildingView)
             this.subViews.push(buildingView);
 
             this.sly.add( buildingView.render().el );
-            //this.$el.append( buildingView.render().el );
         },
 
         addBuilding: function( e ) {

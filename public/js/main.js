@@ -33,7 +33,7 @@ require([
     'models/BuildingModel',
     'views/BuildingsListView'
 ],
-function(MainMenuView, BuildingModel, BuildingsListView, PopupHelper)
+function(MainMenuView, BuildingModel, BuildingsListView)
 {
     new MainMenuView();
     window.exposed = new BuildingsListView();
