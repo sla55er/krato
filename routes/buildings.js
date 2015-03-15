@@ -1,4 +1,5 @@
 var BuildingModel = require( '../models/BuildingModel');
+var requireLogin = require('./requireLogin');
 
 module.exports = function(app){
 
@@ -8,14 +9,17 @@ module.exports = function(app){
         {
             if (err)
             {
-                return res.send(err);
+                return res.send({
+                    status: "error",
+                    msg: err
+                });
             }
 
             res.send(books);
         });
     });
 
-    app.post( '/buildings', function( req, res )
+    app.post( '/buildings', requireLogin, function( req, res )
     {
         var building = {
             name: req.body.name,
@@ -28,14 +32,17 @@ module.exports = function(app){
         {
             if (err)
             {
-                return res.send(err);
+                return res.send({
+                    status: "error",
+                    msg: err
+                });
             }
 
             res.send(book);
         });
     });
 
-    app.delete( '/buildings/:id', function( req, res )
+    app.delete( '/buildings/:id', requireLogin, function( req, res )
     {
         BuildingModel.remove(req.params.id, function(err)
         {

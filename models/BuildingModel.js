@@ -1,16 +1,16 @@
-var mongoose = require( 'mongoose' );
-
-mongoose.connect( 'mongodb://127.0.0.1:27017/krato_building' );
+//var mongoose = require( 'mongoose' );
+//
+//mongoose.connect( 'mongodb://127.0.0.1:27017/krato_building' );
 
 //Schemas
-var Building = new mongoose.Schema({
+var Building = new global.db.Schema({
     name: String,
     address: String,
     status: String,
     description: String
 });
 //Models
-var BuildingModel = mongoose.model( 'Building', Building );
+var BuildingModel = global.db.model( 'Building', Building );
 
 module.exports = {
 

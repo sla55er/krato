@@ -4,6 +4,8 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var favicon = require('serve-favicon');
+var session = require('client-sessions');
+require('./models/dbconnection');
 
 var app = express();
 
@@ -19,14 +21,15 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-require('./routes')(app);
-
-// catch 404 and forward to error handler
-app.use(function(req, res, next) {
-    var err = new Error('Not Found');
-    err.status = 404;
-    next(err);
-});
+app.use(session({
+    cookieName: 'session',
+    secret: "jodjaIWJ!&*&jela[]'da!*&&sdad;KIQdma(*#!",
+    duration: 30 * 60 * 1000,
+    activeDuration: 5 * 60 * 1000,
+    httpOnly: true,
+    secure: true,
+    ephemeral: true
+}));
 
 // error handlers
 
@@ -51,6 +54,17 @@ app.use(function(err, req, res, next) {
         error: {}
     });
 });
+
+require('./routes')(app);
+
+// catch 404 and forward to error handler
+app.use(function(req, res, next) {
+    var err = new Error('Not Found');
+    err.status = 404;
+    next(err);
+});
+
+
 
 
 module.exports = app;

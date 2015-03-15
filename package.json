@@ -1,9 +1,9 @@
 {
   "name": "krato",
   "version": "0.0.0",
-  "repository" : {
-    "type" : "git",
-    "url" : "https://github.com/sla55er/krato.git"
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sla55er/krato.git"
   },
   "private": true,
   "scripts": {
@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "body-parser": "^1.12.0",
+    "client-sessions": "^0.7.0",
     "cookie-parser": "~1.3.3",
     "debug": "^2.1.2",
     "ejs": "^2.3.1",
