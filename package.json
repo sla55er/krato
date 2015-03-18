@@ -5,6 +5,9 @@
     "type": "git",
     "url": "https://github.com/sla55er/krato.git"
   },
+  "engines": {
+    "node": "0.12.0"
+  },
   "private": true,
   "scripts": {
     "start": "node ./bin/www"
