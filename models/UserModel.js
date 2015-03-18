@@ -7,6 +7,17 @@ var User = new global.db.Schema({
 //Models
 var UserModel = global.db.model( 'User', User );
 
+UserModel.create({
+    email: "krato@admin.com",
+    password: "pass"
+}, function(err, data)
+{
+    if (err)
+    {
+        console.log(err);
+    }
+});
+
 module.exports = {
 
     findOne: function( query, callback )
