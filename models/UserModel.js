@@ -16,6 +16,7 @@ UserModel.create({
     {
         console.log(err);
     }
+
 });
 
 module.exports = {

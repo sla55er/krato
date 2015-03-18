@@ -110,8 +110,8 @@
       <file leaf-file-name="UserModel.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/models/UserModel.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.8666667" vertical-offset="81" max-vertical-offset="720">
-              <caret line="24" column="54" selection-start-line="24" selection-start-column="54" selection-end-line="24" selection-end-column="54" />
+            <state vertical-scroll-proportion="0.42222223" vertical-offset="81" max-vertical-offset="738">
+              <caret line="14" column="12" selection-start-line="14" selection-start-column="12" selection-end-line="14" selection-end-column="12" />
               <folding />
             </state>
           </provider>
@@ -466,7 +466,13 @@
       <option name="project" value="LOCAL" />
       <updated>1426707062431</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Added MainMenuView.&#10;Added methods to /buildings route">
+      <created>1426704124675</created>
+      <option name="number" value="00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1426704124675</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TodoView" selected-index="4">
@@ -928,8 +934,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/models/UserModel.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.8666667" vertical-offset="81" max-vertical-offset="720">
-          <caret line="24" column="54" selection-start-line="24" selection-start-column="54" selection-end-line="24" selection-end-column="54" />
+        <state vertical-scroll-proportion="0.42222223" vertical-offset="81" max-vertical-offset="738">
+          <caret line="14" column="12" selection-start-line="14" selection-start-column="12" selection-end-line="14" selection-end-column="12" />
           <folding />
         </state>
       </provider>
