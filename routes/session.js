@@ -8,6 +8,14 @@ module.exports = function(app)
         {
             UserModel.findOne({email: req.session.user.email}, function (err, user)
             {
+                if (err)
+                {
+                    res.send({
+                        status: "error",
+                        msg: err
+                    })
+                }
+
                 if (user)
                 {
                     req.user = user;

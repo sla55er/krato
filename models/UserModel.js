@@ -11,8 +11,10 @@ module.exports = {
 
     findOne: function( query, callback )
     {
-        UserModel.findOne(query, function( err, user ) {
-            if( err ) {
+        UserModel.findOne(query, function( err, user )
+        {
+            if( err )
+            {
                 callback( err );
             }
 
