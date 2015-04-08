@@ -19,7 +19,7 @@ module.exports = function(app){
         });
     });
 
-    app.post( '/buildings'/*, requireLogin*/, function( req, res )
+    app.post( '/buildings', requireLogin, function( req, res )
     {
         var building = {
             name: req.body.name,

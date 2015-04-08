@@ -7,7 +7,7 @@ var User = new global.db.Schema({
 //Models
 var UserModel = global.db.model( 'User', User );
 
-UserModel.create({
+/*UserModel.create({
     email: "krato@admin.com",
     password: "pass"
 }, function(err, data)
@@ -17,7 +17,7 @@ UserModel.create({
         console.log(err);
     }
 
-});
+});*/
 
 module.exports = {
 
