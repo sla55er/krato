@@ -27,7 +27,7 @@ module.exports = {
         {
             if( err )
             {
-                callback( err );
+                return callback( err );
             }
 
             callback( null, user );

@@ -18,7 +18,7 @@ module.exports = {
     {
         BuildingModel.find( function( err, books ) {
             if( err ) {
-                callback( err );
+                return callback( err );
             }
 
             callback( null, books );
